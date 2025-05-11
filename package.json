@@ -1,0 +1,43 @@
+{
+  "name": "electron-activity-tracker",
+  "version": "1.0.0",
+  "description": "An Electron app that logs user activity (mouse, keyboard, active window) for productivity tracking.",
+  "author": "Dev",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "clean": "rimraf dist",
+    "pack": "electron-builder --dir", 
+    "dist": "npm run clean && electron-builder"
+  },
+  "build": {
+    "appId": "com.dev.activitytracker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+  "main.js",
+  "preload.js",
+  "index.html",
+  "renderer.js",
+  "package.json",
+  "node_modules/**/*"
+]
+,
+    "win": {
+      "target": "portable",
+      "artifactName": "${name}-Portable-${version}.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "36.2.0",
+    "electron-builder": "^26.0.12",
+    "rimraf": "^5.0.1"
+  },
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "robotjs": "^0.6.0",
+    "uiohook-napi": "^1.5.4"
+  }
+}
