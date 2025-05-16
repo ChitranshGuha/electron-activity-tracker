@@ -3,7 +3,13 @@
 This is a desktop application built with Electron that tracks user activity like active window title, mouse, and keyboard inputs, and logs the data locally.
 
 ---
+## 🖼️ Screenshot
 
+![App Screenshot](assets/1.png)
+
+![App Screenshot](assets/2.png)
+
+---
 ## 🖥️ Features
 
 - Tracks active window titles and usage duration
