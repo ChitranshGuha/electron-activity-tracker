@@ -11,20 +11,24 @@ let db;
 const dataDir = app.getPath("userData");
 const logFilePath = path.join(dataDir, "activity-log.json");
 const textLogPath = path.join(dataDir, "activity-log.txt");
+// const dbPath = path.join(dataDir, 'activity.db');
 
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
 // ─── Connect to MySQL ────────────────────────────────────────────────────────
-async function initDatabase() {
-  db = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'abcd',
-    database: 'electron'
-  });
-}
+// async function initDatabase() {
+//   db = await mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'abcd',
+//     database: 'electron'
+//   });
+// }
+const config = require('./db-config.json');
+db = await mysql.createConnection(config);
+
 
 // ─── Store in the Database ───────────────────────────────────────────────────
 async function writeToDatabase(entry) {
