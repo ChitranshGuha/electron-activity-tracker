@@ -8,7 +8,7 @@
     "start": "electron .",
     "postinstall": "electron-builder install-app-deps",
     "clean": "rimraf dist",
-    "pack": "electron-builder --dir", 
+    "pack": "electron-builder --dir",
     "dist": "npm run clean && electron-builder"
   },
   "build": {
@@ -17,14 +17,13 @@
       "output": "dist"
     },
     "files": [
-  "main.js",
-  "preload.js",
-  "index.html",
-  "renderer.js",
-  "package.json",
-  "node_modules/**/*"
-]
-,
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "package.json",
+      "node_modules/**/*"
+    ],
     "win": {
       "target": "portable",
       "artifactName": "${name}-Portable-${version}.exe"
@@ -37,6 +36,7 @@
   },
   "dependencies": {
     "active-win": "^8.2.1",
+    "mysql2": "^3.14.1",
     "robotjs": "^0.6.0",
     "uiohook-napi": "^1.5.4"
   }
